@@ -1,16 +1,19 @@
-# This is a sample Python script.
+num = str(input('Введите 1, если хотите использовать заданный в коде массив\n'
+                'Введите любой символ, отличный от 1, если хотите ввести массив с клавиатуры: '))
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+if num == '1':
+    entered_list = ['123']
+else:
+    entered_list = list(map(str, input("Введите элементы массива разделенные пробелом: ").split()))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def less_four(en_list):
+    res = []
+    for i in en_list:
+        if len(i) <= 3:
+            res.append(i)
+    return res
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+res_list = less_four(entered_list)
+print(entered_list, '->', res_list)
